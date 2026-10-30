@@ -1,0 +1,19 @@
+/* Chroma tokens, with GitHub-inspired colors for both system appearances. */
+.bg, .chroma { background: var(--code-background); color: var(--content-primary); }
+.chroma .err { color: light-dark(#a40e26, #ff7b72); }
+.chroma .lnlinks { color: inherit; text-decoration: none; }
+.chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+.chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+.chroma .hl { background: var(--code-border); }
+.chroma .lnt, .chroma .ln { color: var(--content-secondary); user-select: none; margin-right: .75em; }
+.chroma .line { display: flex; }
+.chroma :is(.k, .kc, .kd, .kn, .kp, .kr, .kt, .o, .ow, .or) { color: light-dark(#cf222e, #ff7b72); }
+.chroma :is(.nb, .nc, .nd, .ne, .nf, .fm) { color: light-dark(#6639ba, #d2a8ff); }
+.chroma :is(.no, .na, .nt, .nv, .vc, .vg, .vi, .vm, .m, .mb, .mf, .mh, .mi, .il, .mo) { color: light-dark(#0550ae, #79c0ff); }
+.chroma :is(.s, .sa, .sb, .sc, .dl, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss) { color: light-dark(#0a3069, #a5d6ff); }
+.chroma :is(.c, .ch, .cm, .c1, .cs, .cp, .cpf) { color: light-dark(#57606a, #8b949e); }
+.chroma .gd { color: light-dark(#82071e, #ffa198); background: light-dark(#ffebe9, #490202); }
+.chroma .gi { color: light-dark(#116329, #56d364); background: light-dark(#dafbe1, #0f5323); }
+.chroma .ge { font-style: italic; }
+.chroma .gs { font-weight: 600; }
+.chroma .gl { text-decoration: underline; }

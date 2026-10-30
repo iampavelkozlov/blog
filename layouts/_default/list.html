@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="list-container">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="section-title">{{ if eq .Kind "taxonomy" }}Теги{{ else }}{{ .Title }}{{ end }}</h1>
+    {{ .Content }}
+    {{ $paginator := .Paginate .Pages }}
+    {{ range $paginator.Pages }}
+      {{ if eq $.Kind "taxonomy" }}
+        {{ partial "tag-entry.html" . }}
+      {{ else }}
+        {{ partial "post-entry.html" . }}
+      {{ end }}
+    {{ end }}
+    {{ partial "pagination-controls.html" $paginator }}
+  </section>
+{{ end }}

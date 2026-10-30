@@ -1,0 +1,11 @@
+<div class="header">
+  <a class="header-title" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+  <nav class="header-menu" aria-label="Основная навигация">
+    <a href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}>Заметки</a>
+    {{ if site.Taxonomies.tags }}
+      {{ with site.GetPage "/tags" }}<a href="{{ .RelPermalink }}">Теги</a>{{ end }}
+    {{ end }}
+    {{ with site.Home.OutputFormats.Get "rss" }}<a href="{{ .RelPermalink }}">RSS</a>{{ end }}
+    <a href="https://github.com/iampavelkozlov" rel="me">GitHub</a>
+  </nav>
+</div>

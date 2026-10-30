@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <section class="list-container" aria-labelledby="notes-title">
+    <h1 id="notes-title" class="section-title">{{ site.Params.homeCollectionTitle }}</h1>
+    {{ $posts := where site.RegularPages "Section" site.Params.homeCollection }}
+    {{ if $posts }}
+      {{ $paginator := .Paginate $posts }}
+      {{ range $paginator.Pages }}
+        {{ partial "post-entry.html" . }}
+      {{ end }}
+      {{ partial "pagination-controls.html" $paginator }}
+    {{ else }}
+      <p class="empty-state">Заметок пока нет.</p>
+    {{ end }}
+  </section>
+{{ end }}

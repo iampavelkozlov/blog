@@ -1,0 +1,57 @@
+baseURL = 'https://iampavelkozlov.github.io/blog/'
+title = 'Pavel Kozlov'
+theme = 'typo'
+locale = 'ru-RU'
+defaultContentLanguage = 'ru'
+timeZone = 'Europe/Moscow'
+enableRobotsTXT = true
+summaryLength = 30
+
+[pagination]
+  pagerSize = 20
+
+[taxonomies]
+  tag = 'tags'
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML', 'RSS']
+  taxonomy = ['HTML']
+  term = ['HTML', 'RSS']
+
+[params]
+  description = 'Технические заметки Павла Козлова.'
+  theme = 'auto'
+  colorPalette = 'default'
+  homeCollection = 'posts'
+  homeCollectionTitle = 'Заметки'
+  paginationSize = 20
+  listSummaries = true
+  listDateFormat = '02.01.2006'
+  singleDateFormat = '02.01.2006'
+  toc = true
+  showTags = true
+  readTime = false
+  hideBackToTop = true
+  mermaidTheme = 'neutral'
+  mermaidDarkTheme = 'dark'
+
+  [params.breadcrumbs]
+    enabled = true
+    showCurrentPage = false
+    home = 'Заметки'
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+    tabWidth = 4
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[services.rss]
+  limit = 30
+
+[caches.images]
+  dir = ':cacheDir/images'

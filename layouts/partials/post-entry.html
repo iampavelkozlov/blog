@@ -1,0 +1,9 @@
+<div class="post-line">
+  <p class="line-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format site.Params.listDateFormat }}</time></p>
+  <div>
+    <p class="line-title"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></p>
+    {{ if site.Params.listSummaries }}
+      {{ with .Description | default (.Summary | plainify | truncate 180) }}<p class="line-summary">{{ . }}</p>{{ end }}
+    {{ end }}
+  </div>
+</div>
