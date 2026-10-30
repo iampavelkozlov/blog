@@ -40,7 +40,7 @@ jobs:
           cd "$RUNNER_TEMP"
           curl --fail --silent --show-error --location --retry 3 -o "$ARCHIVE" "$RELEASE/$ARCHIVE"
           curl --fail --silent --show-error --location --retry 3 -o checksums.txt "$RELEASE/hugo_${HUGO_VERSION}_checksums.txt"
-          rg "  ${ARCHIVE}$" checksums.txt | sha256sum --check
+          awk -v archive="$ARCHIVE" '$2 == archive' checksums.txt | sha256sum --check
           mkdir -p hugo-bin
           tar -xzf "$ARCHIVE" -C hugo-bin hugo
           echo "$RUNNER_TEMP/hugo-bin" >> "$GITHUB_PATH"
